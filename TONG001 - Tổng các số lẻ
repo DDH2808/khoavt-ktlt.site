@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main (){
+	int t; 
+ 	cin>>t;
+ 	while(t--){
+ 		long long l,r;
+ 		cin>>l>>r;
+ 		if (l%2==0){
+			l++;
+ 		}
+ 		if (r%2==0){
+ 			r--;
+ 		}
+ 		long long sole = (r-l)/2 + 1;
+ 		long long tongle = sole*(l+r)/2; 
+ 		cout<< tongle << endl;
+ 	}
+ 	return 0;
+}
+
