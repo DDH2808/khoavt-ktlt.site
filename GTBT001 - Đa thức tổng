@@ -1,0 +1,38 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int tongmu(float x, int k){
+    float mu = 0;
+    if(x==0)
+        return 0 ;
+    if(k==0)
+        return 1;
+    if(k==1)
+        return x;
+    else return tongmu(x, k-1)*x;
+}
+
+int sum1(int n){
+    int sum1=0;
+    for(int i=1;i<=n;i++){
+        sum1+=i;
+    }
+    return sum1;
+}
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        int n;
+        float x;
+        cin >> n >> x;
+        float sum = 0;
+        for(int i=1; i<=n; i++){
+            sum+=(float) tongmu(x,i) / (sum1(i));
+        }
+        printf("%.3f\n", sum);
+    }
+    return 0;
+}
