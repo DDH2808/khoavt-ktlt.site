@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool uocnt(long long n) {
+	for (long long i = 2;i <= sqrt(n);i += 1) {
+		long long dem = 0;
+		while (n % i == 0) {
+			dem++;
+			n /= i;
+			if (dem > 1) {
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+int main(){
+	int t; 
+	cin >> t;
+	while (t--) {
+		long long n; cin >> n;
+		if (uocnt(n)) {
+		cout << "NO"<<endl;
+		}	
+		else {
+		cout << "YES"<<endl;
+		}	
+	}
+	return 0;
+}
