@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+long long gthua(long long k){
+	long long gt = 1;
+	if(k==0 || k==1)
+		return gt;
+	for(int i = 2; i <= k;i++){
+		gt*=i;
+	}
+	return gt;
+}
+
+float cangt(long long k){
+	if(k == 1)
+	return 1.0;
+	return pow((float)gthua(k) + cangt(k-1),1.0/((float)k+1.0));
+}
+
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+		int k ;
+		cin >> k ;
+		printf("%.3f\n", cangt(k));
+	}
+	return 0;
+}
