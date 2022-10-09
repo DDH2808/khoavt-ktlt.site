@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool snt(long long n){
+	for(int i=5; i<=sqrt(n); i+=6){
+		if(n%i==0 || n%(i+2)==0){
+			return false;
+		}
+	}
+	return true;
+}
+
+long long tong(long long n){
+	if(n<=5){
+		return 5;
+	}
+	while(n%6!=1){
+		n++;
+	}
+	while(!snt(n) || !snt(n-2)){
+		n+=6;
+	}
+	return n;
+}
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		long long n;
+		cin>>n;
+		cout<<tong(n)<<endl;
+	}
+	return 0;
+}
