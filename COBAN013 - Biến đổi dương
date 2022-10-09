@@ -1,0 +1,24 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+int biendoi(int a[],int n){ 
+	int k = 0, b = 0; 
+	for(int i = 0; i < n; i ++){ 
+		if(a[i] == 0) return -1; 
+		if(a[i] < 0) k ++; 
+		else b ++; 
+	} 
+	return min(k, b); 
+}
+int main(){ 
+	int t; 
+	cin >> t; 
+	while(t--){ 
+		int n; 
+		cin >> n; 
+		int a[n]; 
+		for(int i = 0; i < n; i ++) 
+			cin >> a[i]; 
+			cout << biendoi(a, n) << endl; 
+	} 
+	return 0; 
+}
