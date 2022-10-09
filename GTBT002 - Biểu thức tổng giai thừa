@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int tongmu(float x, int k){
+	float mu = 0;
+	if(x==0)
+		return 0 ;
+	if(k==0)
+		return 1;
+	if(k==1)
+		return x;
+	else return tongmu(x, k-1)*x;
+}
+
+long long gthua(int k){
+	long long gt = 1;
+	if(k==0 || k==1)
+		return gt;
+	for(int i = 2; i <= k;i++){
+		gt*=i;
+	}
+	return gt;
+}
+
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+		float x;
+		int n ;
+		cin >> n >> x;
+		float sum = 0;
+		for(int k = 1; k<=n; k++){
+		sum+=(float) tongmu(x,k) / (gthua(k));
+	}
+	printf("%.3f\n",sum);
+	}
+	return 0;
+}
