@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		int n;
+		float x;
+		cin>>n>>x;
+		float s=0;
+		float P=1;
+		for(int i=1;i<=n;i++){
+			P=P*x;
+			s = pow((P + s) * 1.0, 1.0/2);
+		}
+		printf("%.3f\n", s);
+	}
+	return 0;
+}
