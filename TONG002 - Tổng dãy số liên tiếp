@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		long long l,r;
+		cin>>l>>r;
+		long long tong=0;
+		tong=((l+r)*(r-l+1))/2;
+		cout<<tong<<endl;
+	}
+	return 0;
+}
