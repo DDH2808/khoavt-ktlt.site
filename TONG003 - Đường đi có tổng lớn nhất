@@ -5,7 +5,7 @@ int main() {
 	int t; 	
 	cin >> t; 
 	while(t--){ 
-		int a[100][100]; 
+		int a[102][102]; 
 		int m, n, result; 
 		cin >> m >> n; 	
 		for (int i = 1; i <= m; ++i) 
