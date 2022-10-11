@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		long long n,du;
+		cin>>n;
+		stack<int> s;
+		while(n){
+			du = n%2;
+			s.push(du);
+			n/=2;
+		}
+		while(!s.empty()) {
+			cout << s.top();
+			s.pop();
+		}
+		cout << endl;
+	}
+	return 0;
+}
+
