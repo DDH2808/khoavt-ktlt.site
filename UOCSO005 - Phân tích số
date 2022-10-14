@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void run(long long n){
+    long long arr[10000];  //m?ng ch?a th?a s? nguyên t?
+    long long arr2[10000];  //m?ng ch?a th?a s? nguyên t? phân bi?t + s? lu?ng
+    int k = 0;
+    while(n%2==0){         // x? lí v?i 2
+        arr[k] = 2;
+        n/=2;
+        k++;
+    }
+    for(long long i=3;i <= sqrt(n); i+=2){   
+        while(n%i == 0){
+            arr[k] = i;
+            n/=i;
+            k++;
+        }
+    }
+    if(n > 2){      // x? lí s? nguyên t? l?n hon 2 còn th?a l?i
+        arr[k] = n;
+        k++;
+    }
+    int j=0;
+    for(int i = 0;i<k;i++){
+        if(arr2[j-2] != arr[i]){    
+            arr2[j] = arr[i]; 
+            arr2[j+1] = 1;  
+            j+=2;
+        }
+        else{
+            arr2[j-1]+=1;
+        }
+ 
+    }
+    //In ket qua
+    cout << j/2 << endl;
+    for(int a = 0; a<j;a+=2){
+        cout << arr2[a] << " " << arr2[a+1] << endl;
+    }
+}
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        long long n;
+        cin >> n;
+        run(n);
+        //cout << endl;
+    }
+    return 0;
+}
